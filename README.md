@@ -43,24 +43,36 @@ Table Notes
 
   ```shell
   python ./train.py 
-                --yaml ultralytics/models/v8/yolov8n.yaml
-                --conf configs/gold_yolo-n.py \
-                --data data/coco.yaml \
-                --epoch 300 \
-                --fuse_ab \
-                --use_syncbn \
-                --device 0,1,2,3,4,5,6,7 \
-                --name gold_yolo-n
+                --yaml ./ultralytics/models/v8/YOLO-DC.yaml
+                --data ./ultralytics/datasets/coco.yaml
+                --weight path
+                --epoch 500 
+                --device 0,1,2,3,4
+                --batch 128
   ```
   ### 2. python
-  
+  Writing direct Python code such as main.py is an example.
+   ```shell
+from ultralytics import YOLO
+def main():
+    # 加载模型
+    model = YOLO("./ultralytics/models/v8/yolov8n-DC.yaml")  # 从头开始构建新模型
+    # model = YOLO("./runs/detect/train_500/weights/best.pt")  # 加载预训练模型（建议用于训练）
 
+    # 使用模型
+    model.train(data="./ultralytics/datasets/coco.yaml",
+                epochs=500, device='cuda:0',
+                batch=48,
+                save_period=50,
+                verbose=True,
+                project="COCO",
+                name="train_DC_n_500",
+                profile=True,)  # 训练模型
+    metrics = model.val(name="val_DC_n_500")  # 在验证集上评估模型性能
+if __name__ == '__main__':
+    main()
 
-## Evaluation
-
-```shell
-python tools/eval.py --data data/coco.yaml --batch 32 --weights weights/Gold_s_pre_dist.pt --task val --reproduce_640_eval
-```
+  ```
 
 
 ## Acknowledgement
