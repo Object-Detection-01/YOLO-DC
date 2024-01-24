@@ -38,10 +38,6 @@ Table Notes
 
 ## Train
 
-#### Gold-YOLO-N
-
-- Step 1: Training a base model
-
   Be sure to open use_dfl mode in config file (use_dfl=True, reg_max=16)
 
   ```shell
@@ -56,57 +52,7 @@ Table Notes
   									--name gold_yolo-n
   ```
 
-- Step 2: Self-distillation training
 
-  Be sure to open use_dfl mode in config file (use_dfl=True, reg_max=16)
-
-  ```shell
-  python -m torch.distributed.launch --nproc_per_node 8 tools/train.py \
-  									--batch 128 \
-  									--conf configs/gold_yolo-n.py \
-  									--data data/coco.yaml \
-  									--epoch 300 \
-  									--device 0,1,2,3,4,5,6,7 \
-  									--use_syncbn \
-  									--distill \
-  									--teacher_model_path runs/train/gold_yolo_n/weights/best_ckpt.pt \
-  									--name gold_yolo-n
-  ```
-
-#### Gold-YOLO-S/M/L
-
-- Step 1: Training a base model
-
-  Be sure to open use_dfl mode in config file (use_dfl=True, reg_max=16)
-
-  ```shell
-  python -m torch.distributed.launch --nproc_per_node 8 tools/train.py \
-  									--batch 256 \
-  									--conf configs/gold_yolo-s.py \ # gold_yolo-m/gold_yolo-l
-  									--data data/coco.yaml \
-  									--epoch 300 \
-  									--fuse_ab \
-  									--use_syncbn \
-  									--device 0,1,2,3,4,5,6,7 \
-  									--name gold_yolo-s # gold_yolo-m/gold_yolo-l
-  ```
-
-- Step 2: Self-distillation training
-
-  Be sure to open use_dfl mode in config file (use_dfl=True, reg_max=16)
-
-  ```shell
-  python -m torch.distributed.launch --nproc_per_node 8 tools/train.py \
-  									--batch 256 \ # 128 for distillation of gold_yolo-l
-  									--conf configs/gold_yolo-s.py \ # gold_yolo-m/gold_yolo-l
-  									--data data/coco.yaml \
-  									--epoch 300 \
-  									--device 0,1,2,3,4,5,6,7 \
-  									--use_syncbn \
-  									--distill \
-  									--teacher_model_path runs/train/gold_yolo-s/weights/best_ckpt.pt \
-  									--name gold_yolo-s # gold_yolo-m/gold_yolo-l
-  ```
 
 ## Evaluation
 
