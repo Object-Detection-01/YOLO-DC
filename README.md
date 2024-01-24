@@ -29,29 +29,31 @@ Table Notes
   ```shell
   pip install -r requirements.txt
   ```
-
+  If you are prompted that a package is missing, follow the corresponding prompts to follow that package.
 - data:
 
   prepare [COCO](http://cocodataset.org)
-  dataset, [YOLO format coco labels](https://github.com/meituan/YOLOv6/releases/download/0.1.0/coco2017labels.zip) and
-  specify dataset paths in data.yaml
+  dataset, YOLO format coco labels and
+  specify dataset paths in data.yaml (data.yaml is located at ". /ultralytics/datasets/coco.yaml").
 
 ## Train
 
-  Be sure to open use_dfl mode in config file (use_dfl=True, reg_max=16)
+  ### 1. command-line mode
+  - See train.py for more information on how to use it.
 
   ```shell
-  python -m torch.distributed.launch --nproc_per_node 8 tools/train.py \
-  									--batch 128 \
-  									--conf configs/gold_yolo-n.py \
-  									--data data/coco.yaml \
-  									--epoch 300 \
-  									--fuse_ab \
-  									--use_syncbn \
-  									--device 0,1,2,3,4,5,6,7 \
-  									--name gold_yolo-n
+  python ./train.py 
+                --yaml ultralytics/models/v8/yolov8n.yaml
+                --conf configs/gold_yolo-n.py \
+                --data data/coco.yaml \
+                --epoch 300 \
+                --fuse_ab \
+                --use_syncbn \
+                --device 0,1,2,3,4,5,6,7 \
+                --name gold_yolo-n
   ```
-
+  ### 2. python
+  
 
 
 ## Evaluation
