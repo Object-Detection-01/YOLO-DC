@@ -73,7 +73,8 @@ if __name__ == '__main__':
     main()
 
   ```
-
+ ### 3. cite
+ If you feel our work is helpful to you, please cite the following paper:
 
 ## Acknowledgement
 
