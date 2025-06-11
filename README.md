@@ -75,6 +75,18 @@ if __name__ == '__main__':
   ```
  ### 3. cite
  If you feel our work is helpful to you, please cite the following paper:
+  ```
+@INPROCEEDINGS{YOLO-DC,
+  author={Zhang, Dengyong and Xu, Chuanzhen and Chen, Jiaxin and Deng, Bin and Liao, Xin},
+  booktitle={2024 Asia Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC)}, 
+  title={YOLO-DC: Enhancing object detection with deformable convolutions and contextual mechanism}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-6},
+  keywords={Convolutional codes;Deformable models;Convolution;Source coding;Data preprocessing;Object detection;Information processing;Feature extraction;Data models;Detection algorithms},
+  doi={10.1109/APSIPAASC63619.2025.10848905}}
+ ```
 
 ## Acknowledgement
 
