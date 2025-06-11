@@ -73,7 +73,7 @@ if __name__ == '__main__':
     main()
 
   ```
-## cite
+## Cite
  If you feel our work is helpful to you, please cite the following paper:
   ```
 @INPROCEEDINGS{YOLO-DC,
