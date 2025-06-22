@@ -86,6 +86,18 @@ if __name__ == '__main__':
   pages={1-6},
   keywords={Convolutional codes;Deformable models;Convolution;Source coding;Data preprocessing;Object detection;Information processing;Feature extraction;Data models;Detection algorithms},
   doi={10.1109/APSIPAASC63619.2025.10848905}}
+
+@article{ZHANG2025117373,
+title = {YOLO-DC: Integrating deformable convolution and contextual fusion for high-performance object detection},
+journal = {Signal Processing: Image Communication},
+pages = {117373},
+year = {2025},
+issn = {0923-5965},
+doi = {https://doi.org/10.1016/j.image.2025.117373},
+url = {https://www.sciencedirect.com/science/article/pii/S0923596525001195},
+author = {Dengyong Zhang and Chuanzhen Xu and Jiaxin Chen and Lei Wang and Bin Deng},
+keywords = {Object detection, YOLO, Deformable convolutions, Contextual mechanisms, Deep learning}
+}
  ```
 
 ## Acknowledgement
