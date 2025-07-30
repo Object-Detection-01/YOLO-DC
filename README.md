@@ -3,7 +3,7 @@
 
 ## Introduction
 YOLO-DC outperforms numerous state-of-the-art (SOTA) algorithms, including YOLOv8, while maintaining a comparable level of computation and parameter count.
-For more details, please refer to our [report on Github](https://github.com/Object-Detection-01/YOLO-DC/blob/main/YOLO-DC__YOLO%20Object%20Detectors%20Based%20on%20Deformable%20Convolutions%20.pdf). The related paper has been accepted for publication in *Signal Processing: Image Communication*.
+For more details, please refer to our [report on Github](https://github.com/Object-Detection-01/YOLO-DC/blob/main/YOLO-DC/paper/YOLO-DC.pdf). The related paper has been accepted for publication in *Signal Processing: Image Communication*.
 
 <img src="images/coco-compar-nsm-Para.png" width="1000" >
 In the figure above, (a) and (b) depict comparisons of computational and parameter counts among the models on the COCO 2017 dataset, respectively.
